@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Denis Martin - Avocat specialist în drept penal cu peste 10 ani de experiență. Apărare juridică expertă și strategii de apărare eficiente.">
+    <meta name="keywords" content="avocat, drept penal, apărare juridică, consultații legale, Denis Martin">
+    <meta property="og:title" content="Denis Martin - Avocat Specialist în Drept Penal">
+    <meta property="og:description" content="Cu peste 10 ani de experiență în dreptul penal, Denis Martin oferă reprezentare juridică dedicată și strategii de apărare eficiente.">
+    <meta property="og:type" content="website">
+    <title>Denis Martin - Avocat Specialist în Drept Penal</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a3a52;
+            --secondary-color: #8b7355;
+            --accent-color: #c9a961;
+            --light-bg: #f5f5f5;
+            --white: #ffffff;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --border-color: #e0e0e0;
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://source.unsplash.com/1200x800/?modern%2Claw%2Coffice');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            filter: brightness(0.6);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 40px 20px;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+            line-height: 1.8;
+        }
+
+        /* CTA Button */
+        .cta-btn {
+            display: inline-block;
+            padding: 14px 40px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: var(--transition);
+            border: 2px solid var(--accent-color);
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .cta-btn:hover {
+            background-color: transparent;
+            color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-btn-secondary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .cta-btn-secondary:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        section > h2 {
+            font-size: 42px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        section > p {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 50px;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .about-content h3 {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            color: var(--text-light);
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .feature-item {
+            padding: 20px;
+            background-color: var(--light-bg);
+            border-left: 4px solid var(--accent-color);
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateX(5px);
+        }
+
+        .feature-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+            margin: 0;
+            text-align: left;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--white);
+            transition: var(--transition);
+            text-align: left;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            text-align: left;
+            margin: 0;
+        }
+
+        .service-card::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            margin-right: 10px;
+            margin-bottom: 2px;
+        }
+
+        /* Process Section */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .step-card {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .step-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .step-card p {
+            color: var(--text-light);
+            text-align: center;
+            margin: 0;
+        }
+
+        .step-card::after {
+            content: '→';
+            position: absolute;
+            right: -25px;
+            top: 20px;
+            font-size: 30px;
+            color: var(--border-color);
+        }
+
+        .step-card:last-child::after {
+            display: none;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            position: relative;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 80px 40px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 60px 0;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://source.unsplash.com/1200x800/?professional%2Clegal%2Coffice');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            opacity: 0.2;
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .cta-section .cta-btn {
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+            background-color: var(--accent-color);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-item {
+            padding: 30px;
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .contact-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .contact-item p {
+            color: var(--text-light);
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .contact-cta {
+            background-color: var(--light-bg);
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .contact-cta p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background-color: var(--white);
+                padding: 20px;
+                gap: 15px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            section > h2 {
+                font-size: 32px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .step-card::after {
+                content: '↓';
+                right: auto;
+                bottom: -30px;
+                top: auto;
+            }
+
+            .step-card:last-child::after {
+                display: none;
+            }
+
+            .cta-section {
+                padding: 50px 20px;
+                margin: 40px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                min-height: 60px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .hero {
+                min-height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .cta-btn {
+                padding: 12px 30px;
+                font-size: 14px;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+
+            section > h2 {
+                font-size: 24px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Smooth Scroll */
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#home" class="logo">Denis Martin</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Acasă</a></li>
+                <li><a href="#about">Despre Mine</a></li>
+                <li><a href="#services">Servicii</a></li>
+                <li><a href="#process">Proces</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Apărare Juridică Expertă în Drept Penal</h1>
+                <p>Cu peste 10 ani de experiență în dreptul penal, Denis Martin oferă reprezentare juridică dedicată și strategii de apărare eficiente pentru a vă proteja drepturile și viitorul.</p>
+                <a href="#contact" class="cta-btn">Programează o Consultație</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>Despre Denis Martin</h2>
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="https://source.unsplash.com/1200x800/?professional%2Clegal%2Cconsultation" alt="Consultație juridică profesională" loading="lazy">
+                </div>
+                <div class="about-content">
+                    <h3>Experiență și Dedicație</h3>
+                    <p>Cu o carieră de peste 10 ani în dreptul penal, Denis Martin și-a construit reputația ca un avocat dedicat și eficient în apărarea drepturilor clienților săi. Specializat în cazuri complexe de drept penal, aduce o abordare strategică și personalizată fiecărui caz, asigurându-se că fiecare client primește reprezentarea juridică de cea mai înaltă calitate.</p>
+                    
+                    <div class="features">
+                        <div class="feature-item">
+                            <h4>Experiență Vastă</h4>
+                            <p>Peste 10 ani de practică exclusivă în dreptul penal</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>Abordare Personalizată</h4>
+                            <p>Strategii de apărare adaptate specificului fiecărui caz</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>Rezultate Dovedite</h4>
+                            <p>Istoric solid de cazuri câștigate și clienți mulțumiți</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <h2>Servicii Juridice Specializate</h2>
+            <p>Oferim asistență juridică completă în toate domeniile dreptului penal, cu focus pe protejarea drepturilor și intereselor clienților noștri.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Apărare în Instanță</h3>
+                    <p>Reprezentare juridică profesională în fața instanțelor de judecată pentru toate tipurile de infracțiuni penale</p>
+                </div>
+                <div class="service-card">
+                    <h3>Consultații Juridice</h3>
+                    <p>Consiliere specializată și analiza cazului pentru înțelegerea situației juridice și opțiunilor disponibile</p>
+                </div>
+                <div class="service-card">
+                    <h3>Asistență în Cercetări</h3>
+                    <p>Îndrumarea și reprezentarea în timpul cercetărilor penale și a procedurilor preliminare</p>
+                </div>
+                <div class="service-card">
+                    <h3>Apeluri și Recursuri</h3>
+                    <p>Contestarea hotărârilor judecătorești prin toate căile de atac disponibile în sistem</p>
+                </div>
+                <div class="service-card">
+                    <h3>Libertate Provizorie</h3>
+                    <p>Solicitarea și susținerea cererilor de libertate provizorie sau măsuri alternative</p>
+                </div>
+                <div class="service-card">
+                    <h3>Drept Penal Economic</h3>
+                    <p>Specializare în infracțiuni economice, financiare și de fraudă</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process">
+            <h2>Cum Funcționează Colaborarea</h2>
+            <p>Un proces transparent și eficient pentru a vă oferi cea mai bună apărare juridică</p>
+            
+            <div class="process-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Consultația Inițială</h3>
+                    <p>Evaluarea detaliată a cazului și analiza situației juridice pentru înțelegerea completă a circumstanțelor</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Strategia de Apărare</h3>
+                    <p>Dezvoltarea unei strategii personalizate bazată pe specificul cazului și obiectivele clientului</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Implementarea</h3>
+                    <p>Executarea planului de apărare cu monitorizare constantă și adaptări când este necesar</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Rezultatul</h3>
+                    <p>Finalizarea cazului cu cele mai bune rezultate posibile pentru client și urmărirea post-caz</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>Aveți Nevoie de Asistență Juridică?</h2>
+            <p>Nu lăsați problemele juridice să vă afecteze viitorul. Contactați-mă astăzi pentru o consultație profesională și să discutăm cum vă pot ajuta.</p>
+            <a href="#contact" class="cta-btn">Contactează Acum</a>
+        </div>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contactează-mă</h2>
+            <p>Sunt disponibil pentru consultații și discuții despre cazul dumneavoastră. Nu ezitați să mă contactați pentru orice întrebare juridică.</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Program</h3>
+                        <p>Luni - Vineri: 9:00 - 18:00</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Urgențe</h3>
+                        <p>Disponibil 24/7 pentru cazuri urgente</p>
+                    </div>
+                </div>
+                
+                <div class="contact-cta">
+                    <p>Programați o întâlnire pentru a discuta despre cazul dumneavoastră și să vedeți cum vă pot ajuta să obțineți cea mai bună apărare juridică.</p>
+                    <a href="tel:+40" class="cta-btn cta-btn-secondary">Sună Acum</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Denis Martin - Avocat. Toate drepturile rezervate.</p>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards and feature items
+        document.querySelectorAll('.service-card, .feature-item, .step-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.animation = 'fadeInUp 0.6s ease-out forwards';
+            observer.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation delay to step cards
+        document.querySelectorAll('.step-card').forEach((card, index) => {
+            card.style.animationDelay = (index * 0.1) + 's';
+        });
+
+        // Add stagger animation to service cards
+        document.querySelectorAll('.service-card').forEach((card, index) => {
+            card.style.animationDelay = (index * 0.1) + 's';
+        });
+    </script>
+</body>
+</html>
